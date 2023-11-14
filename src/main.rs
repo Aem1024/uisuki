@@ -106,7 +106,7 @@ impl EventHandler for Handler {
         }
 
         if msg.content.starts_with("~say ") {
-            if msg.author.roles =/ None {
+            if member.roles != None {
                 let message = msg.content.replace("~say ", "");
                 let _ = msg.channel_id.say(&context, message).await;
                 let _ = msg.delete(&context).await;
