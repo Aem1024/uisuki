@@ -107,7 +107,7 @@ impl EventHandler for Handler {
 
         if msg.content.starts_with("~say ") {
             let SayRole=1115957910284017714;
-            let canSay = msg.author.has_role(SayRole);
+            let canSay = msg.author.has_role(1115955071549702235,SayRole,SayRole);
             if canSay = True {
                 let message = msg.content.replace("~say ", "");
                 let _ = msg.channel_id.say(&context, message).await;
